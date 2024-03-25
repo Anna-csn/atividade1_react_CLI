@@ -1,35 +1,49 @@
+
+import React, { useState } from 'react';
 import "./navbar.css";
 import logo from './elite_store_logo_oficial.svg';
+import CartWidget from './cartwidget.jsx';
 
 export function Navbar() {
+    const [itemCount, setItemCount] = useState(0); // Estado para o número de itens no carrinho
+
+    
+    const incrementItemCount = () => {
+        setItemCount(prevCount => prevCount + 1);
+    };
+
     return (
         <div>
             <div className="menu-desktop">
                 <div className="menu-left">
                     <img src={logo} className="logo" alt="logo" />
                 </div>
-                    <nav className="nav">
+                <nav className="nav">
                     <ul>
                         <li><a href='https://www.google.com.br/' onClick={() => setActive(this)}>Lançamentos</a></li>
                         <li><a href='https://www.google.com.br/' className="active" onClick={() => setActive(this)}>Roupas</a></li>
                         <li><a href='https://www.google.com.br/' onClick={() => setActive(this)}>Acessórios</a></li>
                         <li><a href='https://www.google.com.br/' onClick={() => setActive(this)}>Sale</a></li>
                     </ul>
-                    </nav>
+                </nav>
                     
-                    <div className="menu-rigth">
+                <div className="menu-rigth">
+                    <CartWidget itemCount={itemCount} incrementItemCount={incrementItemCount}/>  
                     <nav >
-                        <div class="menu-item">
-                        <button className="button" onClick={() => alert("Olá, deseja acessar?")}>Entrar</button>
-                        <button className="button" onClick={() => alert("Olá, você deseja se cadastrar?")}>Cadastre-se</button>
-                        </div>   
+                        <div className="menu-item">
+                            <button className="button" onClick={() => alert("Olá, deseja acessar?")}>Entrar</button>
+                            <button className="button" onClick={() => alert("Olá, você deseja se cadastrar?")}>Cadastre-se</button>
+                        </div> 
                     </nav>
-                    </div>
-                 </div>   
-            </div>
-    
+                </div>
+            </div>   
+        </div>
     );
 }
+
+
+
+
 
 //código que define o comportamento do menu sublinhado
 function setActive(event, element) {
