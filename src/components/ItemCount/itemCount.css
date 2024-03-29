@@ -1,0 +1,61 @@
+
+.item-count {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 64px; 
+    margin-right: 5px;
+  }
+  
+  .count-controls {
+    display: flex;
+    align-items: center;
+    gap: 35px; 
+    margin-right: 20px;
+  }
+  
+  .count-controls button {
+    background-color: #2B2B2B; 
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .count-controls span {
+    font-size: 16px;
+  }
+  
+  .add-button {
+    background-color: #2B2B2B; 
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    width: auto;
+    
+  }
+  
+  .add-button:hover {
+    background-color: #FF89A9;
+  }
+  
+  /* Estilo para quando o botão estiver desabilitado */
+  .add-button:disabled {
+    background-color: #ccc;
+    color: #999; 
+    cursor: not-allowed; 
+  }
+  
