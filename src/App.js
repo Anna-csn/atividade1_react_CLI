@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Navbar } from './components/Navbar';
-import ItemListContainer from './components/ItemListContainer/itemlist.jsx';
+import ItemListContainer from './components/ItemListContainer/itemListContainer.jsx';
 
 function App() {
   const [itemCount, setItemCount] = useState(0); // Estado para o número de itens no carrinho
@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar itemCount={itemCount} incrementItemCount={incrementItemCount} />
-        <ItemListContainer greeting="Bem-vindo à nossa loja!" />
+        <ItemListContainer greeting="Catálogo de produtos" />
       </header>
     </div>
   );
