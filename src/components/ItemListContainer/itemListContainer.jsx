@@ -5,7 +5,6 @@ import ItemList from '../ItemList/ItemList';
 
 const ItemListContainer = ({ greeting }) => {
   /*const handleAddToCart = (count) => {
-    // Lógica para adicionar itens ao carrinho
   };*/
 
   return (

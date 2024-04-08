@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Navbar } from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer/itemListContainer.jsx';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
 
 function App() {
   const [itemCount, setItemCount] = useState(0); // Estado para o número de itens no carrinho

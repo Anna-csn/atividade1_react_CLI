@@ -1,0 +1,49 @@
+.item-detail-container {
+    border-color: black;
+}
+
+.item-detail {
+    padding: 30px; /* Aumenta o preenchimento interno */
+    max-width: 800px; /* Definir a largura máxima */
+    width: 100%; /* Definir a largura total */
+    display: flex; /* Permite o layout em linha*/
+    align-items: flex-start; /* Alinha verticalmente os itens no topo */
+}
+
+.item-image {
+    max-width: 60%; /* Aumenta a largura da imagem */
+    border-radius: 5px;
+    margin-right: 150px; /* Adiciona espaçamento entre a imagem e os detalhes */
+    transition: transform 0.3s ease-in-out, border-width 0.6s ease-in-out;
+}
+
+.item-image :hover {
+    transform: scale(1.06); /* Aumenta o tamanho do card em 5% */
+    border-width: 4px; /* Aumenta a largura da borda */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave */
+  }
+
+.h2-title {
+    font-size: 30px; /* Aumenta o tamanho do título */
+    margin-top: 10px; /* Remover margem superior padrão */
+    margin-bottom: 100px; /* Adicionar espaçamento entre o título e os parágrafos */
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Define a largura total */
+}
+
+.details {
+    flex-grow: 1; /* Para ocupar o restante do espaço disponível */
+    margin-top: 30px; /* Adiciona espaço entre a imagem e os detalhes */
+    padding-top: 40px;;
+}
+
+.details p {
+    font-size: 20px; /* Aumenta o tamanho do texto */
+    color: #666666;
+    margin: 0; 
+    margin-bottom: 20px; 
+    background-color: #E4E2DD;
+    border-radius: 8px; 
+    padding: 15px; 
+}
+
