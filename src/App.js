@@ -3,6 +3,7 @@ import './App.css';
 import { Navbar } from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer/itemListContainer.jsx';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
+import { BrowserRouter,Routes, Route } from 'react-router-dom';
 
 function App() {
   const [itemCount, setItemCount] = useState(0); // Estado para o número de itens no carrinho
@@ -13,12 +14,18 @@ function App() {
   };
 
   return (
+    <BrowserRouter>
     <div className="App">
       <header className="App-header">
         <Navbar itemCount={itemCount} incrementItemCount={incrementItemCount} />
-        <ItemListContainer greeting="Catálogo de produtos" />
+        <Routes>
+            <Route path="/" element={<ItemListContainer greeting="Catálogo de produtos" />} />
+            <Route path="/category/:id" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer/>} />
+        </Routes>
       </header>
     </div>
+    </BrowserRouter>
   );
 }
 

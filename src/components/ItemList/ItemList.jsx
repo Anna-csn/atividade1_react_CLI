@@ -1,26 +1,24 @@
-
 import React, { useState, useEffect } from 'react';
-import Item from '../Item/Item';
 import { getListOnApi } from '../../fakeServer';
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'; 
-import "./Itemlist.css"
+import Item from '../Item/Item';
+import "./Itemlist.css";
 
-function ItemList() {
+function ItemList({categoryId}) {
   const [items, setItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null); // Estado para armazenar o item selecionado
 
+
   useEffect(() => {
-    const promise = async () => {
-      const result = await getListOnApi();
-      setTimeout(() => {
-        setItems(result);
-      }, 2000);
+    const fetchItems = async () => {
+      const result = await getListOnApi(categoryId);
+      setItems(result);
     };
-    promise();
-  }, []);
+    fetchItems();
+  }, [categoryId]);
 
   const handleItemClick = (item) => {
-    setSelectedItem(item); // Define o item selecionado e abre os detalhes do produto/item
+    setSelectedItem(item); // Define o item selecionado
   };
 
   return (
@@ -39,3 +37,8 @@ function ItemList() {
 }
 
 export default ItemList;
+
+
+
+
+

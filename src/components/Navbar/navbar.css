@@ -108,7 +108,7 @@ main {
 /* Sublinhado quando passa o mouse */
 .nav ul li a:hover::after,
 .nav ul li a.active::after {
-  background-color: #FF89A9;
+  background-color: #C45824;
   z-index: 1;
 }
 
@@ -129,7 +129,7 @@ main {
 }
 
 .button:hover {
-  background-color: #FF89A9;
+  background-color: #C45824;
 }
 
 .menu-rigth {

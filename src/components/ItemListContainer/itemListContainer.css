@@ -4,7 +4,6 @@
   padding: 20px;
   text-align: center;
   color: black;
-<<<<<<< HEAD
   max-height: calc(100vh - 80px); 
 }
 
@@ -41,44 +40,3 @@
   font-size: 14px;
   color: #666;
 }*/
-=======
-  overflow-y: auto;
-  max-height: calc(100vh - 80px); 
-}
-  
-  .greeting {
-    font-size: 24px;
-    margin-bottom: 20px;
-    padding-bottom: 50px;
-  }
-  
-  
-  .item-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .item-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .item-card img {
-    max-width: 100%;
-  }
-  
-  .item-details h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .item-details p {
-    font-size: 14px;
-    color: #666;
-  }
-  
->>>>>>> 0db5fd6eeee3414cd472573f0418161de4cfa5aa

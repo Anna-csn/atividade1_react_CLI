@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './itemCount.css';
 
-function ItemCount({ stock, initial, onAdd }) {
+function ItemCount({ stock, initial }) {
   const [count, setCount] = useState(initial || 1);
 
   const handleIncrement = () => {
@@ -16,10 +16,9 @@ function ItemCount({ stock, initial, onAdd }) {
   };
 
   const handleAddToCart = () => {
-    if (count <= stock) {
-      onAdd(count);
-      alert(`${count} item(s) adicionado(s) ao carrinho`);
-    } 
+    // Emitindo o evento onAddToCart com a quantidade de itens selecionados
+    const event = new CustomEvent('onAddToCart', { detail: count });
+    window.dispatchEvent(event);
   };
 
   return (

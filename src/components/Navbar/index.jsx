@@ -1,11 +1,12 @@
-
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom'; 
 import "./navbar.css";
-import logo from './elite_store_logo_oficial.svg';
+import logo from './Bookshelf.svg';
 import CartWidget from './cartwidget.jsx';
 
 export function Navbar() {
     const [itemCount, setItemCount] = useState(0); // Estado para o número de itens no carrinho
+    const location = useLocation(); // Hook useLocation para obter o pathname atual
 
     
     const incrementItemCount = () => {
@@ -16,14 +17,16 @@ export function Navbar() {
         <div>
             <div className="menu-desktop">
                 <div className="menu-left">
-                    <img src={logo} className="logo" alt="logo" />
+                    <Link to="/" className="logo-link">
+                        <img src={logo} className="logo" alt="logo" />
+                    </Link>
                 </div>
                 <nav className="nav">
                     <ul>
-                        <li><a href='https://www.google.com.br/' onClick={() => setActive(this)}>Lançamentos</a></li>
-                        <li><a href='https://www.google.com.br/' className="active" onClick={() => setActive(this)}>Roupas</a></li>
-                        <li><a href='https://www.google.com.br/' onClick={() => setActive(this)}>Acessórios</a></li>
-                        <li><a href='https://www.google.com.br/' onClick={() => setActive(this)}>Sale</a></li>
+                    <li><Link to="/" className={`navbar-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
+                        <li><Link to="/category/fantasia" className={`navbar-link ${location.pathname.startsWith('/category/fantasia') ? 'active' : ''}`}>Fantásia</Link></li>
+                        <li><Link to="/category/misterio" className={`navbar-link ${location.pathname.startsWith('/category/misterio') ? 'active' : ''}`}>Mistério</Link></li>
+                        <li><Link to="/category/sale" className={`navbar-link ${location.pathname.startsWith('/category/sale') ? 'active' : ''}`}>Sale</Link></li>
                     </ul>
                 </nav>
                     
@@ -46,28 +49,28 @@ export function Navbar() {
 
 
 //código que define o comportamento do menu sublinhado
-function setActive(event, element) {
+//function setActive(event, element) {
     // Impede o comportamento padrão do clique para evitar recarregar a página
-    event.preventDefault();
+    //event.preventDefault();
 
     // Remove a classe ativa de todos os elementos de menu
-    var navItems = document.querySelectorAll('.nav ul li a');
-    navItems.forEach(function (item) {
-        item.classList.remove('active');
-    });
+    //var navItems = document.querySelectorAll('.nav ul li a');
+    //navItems.forEach(function (item) {
+    //    item.classList.remove('active');
+    //});
 
     // Adiciona a classe ativa apenas ao elemento clicado
-    element.classList.add('active');
-}
+    //element.classList.add('active');
+//}
 
-var navLinks = document.querySelectorAll('.nav ul li a');
-navLinks.forEach(function (link) {
-    link.addEventListener('mouseenter', function () {
-        navLinks.forEach(function (item) {
-            item.classList.remove('active');
-        });
-        link.classList.add('active');
-    });
-});
+//var navLinks = document.querySelectorAll('.nav ul li a');
+//navLinks.forEach(function (link) {
+ //   link.addEventListener('mouseenter', function () {
+  //      navLinks.forEach(function (item) {
+   //         item.classList.remove('active');
+   //     });
+   //     link.classList.add('active');
+    //});
+//});
 
 
